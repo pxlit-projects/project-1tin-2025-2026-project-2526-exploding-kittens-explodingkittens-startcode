@@ -1,0 +1,22 @@
+﻿using System.Security.Claims;
+using Microsoft.AspNetCore.Mvc;
+
+namespace ExplodingKittens.Api.Controllers;
+
+[ApiController]
+public abstract class ApiControllerBase : ControllerBase
+{
+    /// <summary>
+    /// Returns the id (Guid) of the authenticated user / player.
+    /// If no user is authenticated an empty guid is returned.
+    /// </summary>
+    protected Guid UserId
+    {
+        get
+        {
+            if (User is null) return Guid.Empty;
+            string? idClaimValue = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            return Guid.TryParse(idClaimValue, out Guid userId) ? userId : Guid.Empty;
+        }
+    }
+}

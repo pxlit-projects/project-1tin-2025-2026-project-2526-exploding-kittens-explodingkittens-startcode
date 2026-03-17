@@ -1,0 +1,6 @@
+services:
+  explodingkittens.api:
+    image: ${DOCKER_REGISTRY-}explodingkittensapi
+    build:
+      context: .
+      dockerfile: ExplodingKittens.Api/Dockerfile

@@ -1,0 +1,12 @@
+<Solution>
+  <Project Path="docker-compose.dcproj">
+    <Build />
+  </Project>
+  <Project Path="ExplodingKittens.Api.Tests/ExplodingKittens.Api.Tests.csproj" />
+  <Project Path="ExplodingKittens.Api/ExplodingKittens.Api.csproj" />
+  <Project Path="ExplodingKittens.Bootstrapper/ExplodingKittens.Bootstrapper.csproj" />
+  <Project Path="ExplodingKittens.Core.Tests/ExplodingKittens.Core.Tests.csproj" />
+  <Project Path="ExplodingKittens.Core/ExplodingKittens.Core.csproj" />
+  <Project Path="ExplodingKittens.Infrastructure.Tests/ExplodingKittens.Infrastructure.Tests.csproj" Id="f1cee3f7-5c9a-49f6-96aa-9ce7e5d95cf1" />
+  <Project Path="ExplodingKittens.Infrastructure/ExplodingKittens.Infrastructure.csproj" />
+</Solution>

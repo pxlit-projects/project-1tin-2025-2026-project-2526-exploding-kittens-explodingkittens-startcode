@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "TestDatabase": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=KittensDb_IntegrationTest;Integrated Security=True"
+  }
+}

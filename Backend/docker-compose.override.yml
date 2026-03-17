@@ -1,0 +1,22 @@
+services:
+  explodingkittens.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTPS_PORTS=8081
+      - ConnectionStrings__KittensDbConnection=Data Source=sqldata;Database=KittensDockerDb;User Id=sa;Password=Pass@word;TrustServerCertificate=True;
+    ports:
+      - "8080"
+      - "8081"
+  sqldata:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - SA_PASSWORD=Pass@word
+      - ACCEPT_EULA=Y
+    ports:
+      - "1433:1433" #make db server accessible for host system on port 1433(Server name: localhost)
+    volumes:
+      - kittens-sqldata:/var/opt/mssql
+volumes:
+  kittens-sqldata:
+    external: false
